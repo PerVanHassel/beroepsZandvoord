@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: "Newake";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Newake"), url("../assets/fonts/newake/Newake-Font-Demo.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-compact";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Pangram-compact"), url("../assets/fonts/pangram/PPPangramSansRounded-CompactRegular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-compact";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Pangram-compact"), url("../assets/fonts/pangram/PPPangramSansRounded-CompactExtralightReclined.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-compact";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pangram-compact"), url("../assets/fonts/pangram/PPPangramSansRounded-CompactThinItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-Semibold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-ExtraboldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram";
+  font-style: normal;
+  font-weight: 200;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-Thin.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Compressed";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-CompressedExtrabold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Compressed";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-CompressedMediumReclined.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Slim";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-SlimMediumReclined.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Slim";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-SlimExtralight.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Slim";
+  font-style: italic;
+  font-weight: 600;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-SlimSemiboldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Narrow";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-NarrowSemibold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Narrow";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-NarrowExtralightReclined.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Narrow";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-NarrowExtraboldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangram-Narrow";
+  font-style: italic;
+  font-weight: 600;
+  src: local("Pangram"), url("../assets/fonts/pangram/PPPangramSansRounded-NarrowSemiboldItalic.otf") format("opentype");
+}
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../src/bg.jpg);
+  background-position: center 100%;
+  background-size: cover;
+  position: relative;
+  z-index: -2;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent linear-gradient(180deg, #340000 0%, rgba(52, 0, 0, 0.3490196078) 57%, rgba(52, 0, 0, 0.3098039216) 78%, #340000 100%) 0% 0% no-repeat padding-box;
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  padding: 20px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+header a img {
+  width: 175px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  padding: 5px 10px;
+  font-family: good-times, sans-serif;
+  font-size: 20px;
+  color: hsl(0deg, 0%, 87.5%);
+  font-style: italic;
+  font-weight: 500;
+  transition: 150ms ease-in-out all;
+  position: relative;
+  overflow: hidden;
+}
+header nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background: hsl(0deg, 100%, 22.5%);
+  transition: 150ms ease-in-out all;
+}
+header nav a:hover:after {
+  left: 0;
+}
+header nav a:hover {
+  color: hsl(0deg, 0%, 95%);
+}
+
+#timer {
+  font-size: 64px;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 98%);
+  text-shadow: 0 0 20px 20px hsl(0deg, 100%, 22.5%);
+  font-family: "Newake", sans-serif;
+  font-style: italic;
+}
+#timer div {
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+#timer div span {
+  color: hsl(0deg, 0%, 98%);
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+section.land {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 150px;
+}
+
+section.information {
+  background: hsl(0deg, 100%, 10%);
+  height: 100vh;
+}/*# sourceMappingURL=style.css.map */
