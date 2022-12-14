@@ -146,18 +146,21 @@ header {
   position: fixed;
   top: 0;
   z-index: 5;
-  padding: 20px 150px;
+  padding: 20px 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-mask-image: linear-gradient(black, black, black, transparent);
 }
 header a {
   text-decoration: none;
   color: inherit;
 }
 header a img {
-  width: 175px;
+  width: 150px;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -170,7 +173,7 @@ header nav a {
   padding: 5px 10px;
   font-family: good-times, sans-serif;
   font-size: 20px;
-  color: hsl(0deg, 0%, 87.5%);
+  color: hsl(0deg, 0%, 98%);
   font-style: italic;
   font-weight: 500;
   transition: 150ms ease-in-out all;
@@ -191,28 +194,7 @@ header nav a:hover:after {
   left: 0;
 }
 header nav a:hover {
-  color: hsl(0deg, 0%, 95%);
-}
-
-#timer {
-  font-size: 64px;
-  font-weight: 700;
-  color: hsl(0deg, 0%, 98%);
-  text-shadow: 0 0 20px 20px hsl(0deg, 100%, 22.5%);
-  font-family: "Newake", sans-serif;
-  font-style: italic;
-}
-#timer div {
-  display: inline-block;
-  min-width: 90px;
-  text-align: center;
-}
-#timer div span {
-  color: hsl(0deg, 0%, 98%);
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  font-style: normal;
+  color: hsl(0deg, 0%, 40%);
 }
 
 section.land {
@@ -220,7 +202,35 @@ section.land {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 150px;
+  padding: 0 300px;
+}
+section.land .blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+section.land .blocks div {
+  background: hsla(0deg, 0%, 40%, 0.7);
+}
+section.land #timer {
+  font-size: 64px;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 98%);
+  text-shadow: 0 0 20px 20px hsl(0deg, 100%, 22.5%);
+  font-family: good-times, sans-serif;
+  font-style: italic;
+}
+section.land #timer div {
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+section.land #timer div span {
+  color: hsl(0deg, 0%, 98%);
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
 }
 
 section.information {
