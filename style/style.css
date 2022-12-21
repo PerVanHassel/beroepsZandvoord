@@ -154,16 +154,32 @@ header {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   -webkit-mask-image: linear-gradient(black, black, black, transparent);
+  height: 140px;
+  transition: all 350ms ease-in-out;
 }
 header a {
   text-decoration: none;
   color: inherit;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 header a img {
   width: 150px;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  position: relative;
+  transition: all 150ms ease-in-out;
+  transition-delay: 200ms;
+}
+header a img:last-child {
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-300%);
+  transition: all 350ms ease-in-out;
 }
 header nav {
   display: flex;
@@ -197,20 +213,61 @@ header nav a:hover {
   color: hsl(0deg, 0%, 40%);
 }
 
+header.is-sticky {
+  height: 85px;
+}
+header.is-sticky a img {
+  transform: translateY(-300%);
+}
+header.is-sticky a img:last-child {
+  transform: translateX(-50%) translateY(-50%);
+}
+
 section.land {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0 300px;
+  z-index: 1;
 }
 section.land .blocks {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 325px;
+  height: 325px;
+  gap: 1px;
+  border-radius: 10px;
+  overflow: hidden;
 }
-section.land .blocks div {
-  background: hsla(0deg, 0%, 40%, 0.7);
+section.land .blocks button {
+  border: none;
+  background: hsla(0deg, 0%, 70%, 0.7);
+  display: flex;
+  padding: 10px;
+  transition: all 150ms ease-in-out;
+}
+section.land .blocks button h2 {
+  font-family: good-times, sans-serif;
+  color: hsl(0deg, 0%, 98%);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1.25px;
+}
+section.land .blocks button p {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+section.land .blocks button p span {
+  font-size: 16px;
+  color: hsl(0deg, 0%, 98%);
+}
+section.land .blocks button:hover {
+  background: hsla(0deg, 0%, 90%, 0.7);
 }
 section.land #timer {
   font-size: 64px;
@@ -219,6 +276,8 @@ section.land #timer {
   text-shadow: 0 0 20px 20px hsl(0deg, 100%, 22.5%);
   font-family: good-times, sans-serif;
   font-style: italic;
+  display: flex;
+  gap: 10px;
 }
 section.land #timer div {
   display: inline-block;

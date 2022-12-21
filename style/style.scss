@@ -202,6 +202,7 @@ $transition-default: 150ms ease-in-out all;
   margin: 0;
   box-sizing: border-box;
 }
+
 .background {
   height: 100vh;
   width: 100%;
@@ -241,13 +242,34 @@ header {
   width: 100%;
   backdrop-filter: blur(5px);
   -webkit-mask-image: linear-gradient(black, black, black, transparent);
+  height: 140px;
+  transition: all 350ms ease-in-out;
   a {
     text-decoration: none;
     color: inherit;
+    position: relative;
+    display: flex;
+    align-items: center;
+
     img {
       width: 150px;
       height: auto;
       object-fit: cover;
+      position: relative;
+      // top: 50%;
+      // left: 50%;
+      // transform: translateX(-50%);
+      transition: all 150ms ease-in-out;
+      transition-delay: 200ms;
+    }
+    img:last-child {
+      width: 250px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-300%);
+      // height: 150px;
+      transition: all 350ms ease-in-out;
     }
   }
   nav {
@@ -282,6 +304,17 @@ header {
     }
   }
 }
+header.is-sticky {
+  height: 85px;
+  a {
+    img {
+      transform: translateY(-300%);
+    }
+    img:last-child {
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+}
 
 section.land {
   display: flex;
@@ -289,12 +322,45 @@ section.land {
   justify-content: space-between;
   align-items: center;
   padding: 0 300px;
+  z-index: 1;
   .blocks {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    div {
-      background: $color-grayish;
+    grid-template-rows: repeat(2, 1fr);
+    width: 325px;
+    height: 325px;
+    gap: 1px;
+    border-radius: 10px;
+    overflow: hidden;
+    button {
+      border: none;
+      background: hsla(0, 0%, 70%, 0.7);
+      display: flex;
+      padding: 10px;
+      transition: all 150ms ease-in-out;
+      h2 {
+        font-family: $font-goodTimes;
+        color: $color-white;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 1.25px;
+      }
+      p {
+        align-self: flex-end;
+        display: flex;
+        justify-content: flex-end;
+        // justify-self: flex-end;
+        width: 100%;
+        span {
+          font-size: 16px;
+          color: $color-white;
+        }
+      }
+    }
+    button:hover {
+      // background: $colorHover-grayish;
+      background: hsla(0, 0%, 90%, 0.7);
     }
   }
   #timer {
@@ -304,7 +370,8 @@ section.land {
     text-shadow: 0 0 20px 20px $color-f1redLight;
     font-family: $font-goodTimes;
     font-style: italic;
-
+    display: flex;
+    gap: 10px;
     div {
       display: inline-block;
       min-width: 90px;

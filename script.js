@@ -16,15 +16,25 @@ function updateTimer() {
   document.getElementById("timer").innerHTML =
     "<div>" +
     d +
-    "<span>days</span></div>" +
+    "<span>Dagen</span></div>" +
     "<div>" +
     h +
-    "<span>hours</span></div>" +
+    "<span>Uur</span></div>" +
     "<div>" +
     m +
-    "<span>minutes</span></div>" +
+    "<span>Minuten</span></div>" +
     "<div>" +
     s +
-    "<span>seconds</span></div>";
+    "<span>Seconden</span></div>";
 }
 setInterval("updateTimer()", 1000);
+
+window.addEventListener("scroll", function () {
+  let headerMain = document.getElementById("headerMain");
+
+  if (window.pageYOffset > 15) {
+    headerMain.classList.add("is-sticky");
+  } else {
+    headerMain.classList.remove("is-sticky");
+  }
+});
